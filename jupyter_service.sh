@@ -43,7 +43,7 @@ function start()
 	if [ "${jupyter_status}" -eq "1" ];
 	then
             echo -en "starting... "
-	    $JUPYTER notebook --no-browser /home/perrot/devel/notebooks &> /dev/null &
+	    $JUPYTER notebook --no-browser ${JUPYTER_NOTEBOOKS_DIR} &> /dev/null &
             let i=0;
             while [ "$(get_jupyter_status)" -eq "1" -a $i -lt 5 ];
             do
